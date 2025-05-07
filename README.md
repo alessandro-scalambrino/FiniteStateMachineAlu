@@ -11,6 +11,7 @@ VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) controlled by a F
 - **Output:**
   - `Q`: Stored output value
 - **Function:** Stores and synchronizes data between clock cycles; used to hold operands or results.
+- 3 flip flop are instantiated, two for storing the operands (a,b) and one for the result (c)
 
 ### 2. **MUX (mux.vhd)**
 - **Inputs:**
@@ -38,6 +39,15 @@ VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) controlled by a F
 - **Outputs:**
   - Control signals to operate ALU, MUX, or flip-flops
 - **Function:** Implements a finite state machine to sequence operations or manage a datapath.
+![fsm drawio](https://github.com/user-attachments/assets/add607e8-395d-4345-8fc8-90b7356d6e55)
+init: All control signals are set to 0.
+
+If acc = 0 → fetch: Update the contents of operand flip-flops A and B. Set SEL = 1 to select new operands.
+
+If acc = 1 → accumulate: Update the content of flip-flop A. Set SEL = 0 to select the result of the previous execution as the second operand.
+
+process → write_result: All control signals are set to 0, except for flip-flop C, which is updated with the ALU result.
+
 
 ### 5. **Block Diagram File (alu-controller.bdf)**
 ![alu](https://github.com/user-attachments/assets/8c1a3464-6775-447c-9ea4-2fc7b0974063)
