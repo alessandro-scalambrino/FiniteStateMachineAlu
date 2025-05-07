@@ -39,8 +39,7 @@ A modular VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) control
 - **Function:** Stores and synchronizes data between clock cycles; used to hold operands or results.
 
 ### 5. **Block Diagram File (alu-controller.bdf)**
-![alu-1](https://github.com/user-attachments/assets/1090bdd6-3a71-441c-a94d-486bcdd1afc8)
-
+![alu](https://github.com/user-attachments/assets/8c1a3464-6775-447c-9ea4-2fc7b0974063)
 - **File Type:** Quartus Block Diagram File (`.bdf`)
 - **Function:** Visually connects the ALU, FSM, MUX, and flip-flops using a schematic interface in Quartus.
 - **Purpose:** 
