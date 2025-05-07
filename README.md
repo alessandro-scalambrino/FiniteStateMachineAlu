@@ -3,7 +3,25 @@ VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) controlled by a F
 
 ## ⚙️ Components Overview
 
-### 1. **ALU (alu.vhd)**
+### 1. **Flip-Flop (flipflop.vhd)**
+- **Inputs:**
+  - `D`: Data input (8-bit)
+  - `clk`: Clock signal
+  - `reset`: Optional reset signal
+- **Output:**
+  - `Q`: Stored output value
+- **Function:** Stores and synchronizes data between clock cycles; used to hold operands or results.
+
+### 2. **MUX (mux.vhd)**
+- **Inputs:**
+  - Multiple 8-bit data inputs (e.g., `A`, `B`)
+  - `sel`: Selection line 
+- **Output:**
+  - One selected 8-bit output
+- **Function:** Routes one of the input signals to the output based on the `sel` value.
+
+
+### 3. **ALU (alu.vhd)**
 - **Inputs:**
   - `IN1`, `IN2`: 8-bit operands
   - `OP`: 3-bit operation selector
@@ -12,7 +30,7 @@ VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) controlled by a F
   - `carryout`: Carry-out flag for addition/subtraction
 - **Function:** Performs arithmetic and logic operations such as addition, subtraction, multiplication, division, XOR, XNOR, and comparisons.
 
-### 2. **FSM Controller (fsm.vhd)**
+### 4. **FSM Controller (fsm.vhd)**
 - **Inputs:**
   - `clk`: Clock signal
   - `reset`: Asynchronous reset
@@ -20,23 +38,6 @@ VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) controlled by a F
 - **Outputs:**
   - Control signals to operate ALU, MUX, or flip-flops
 - **Function:** Implements a finite state machine to sequence operations or manage a datapath.
-
-### 3. **MUX (mux.vhd)**
-- **Inputs:**
-  - Multiple 8-bit data inputs (e.g., `A`, `B`)
-  - `sel`: Selection line (usually 1–2 bits)
-- **Output:**
-  - One selected 8-bit output
-- **Function:** Routes one of the input signals to the output based on the `sel` value.
-
-### 4. **Flip-Flop (flipflop.vhd)**
-- **Inputs:**
-  - `D`: Data input (typically 8-bit)
-  - `clk`: Clock signal
-  - `reset`: Optional reset signal
-- **Output:**
-  - `Q`: Stored output value
-- **Function:** Stores and synchronizes data between clock cycles; used to hold operands or results.
 
 ### 5. **Block Diagram File (alu-controller.bdf)**
 ![alu](https://github.com/user-attachments/assets/8c1a3464-6775-447c-9ea4-2fc7b0974063)
