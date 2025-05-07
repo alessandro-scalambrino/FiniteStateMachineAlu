@@ -46,5 +46,5 @@ A modular VHDL project implementing an 8-bit Arithmetic Logic Unit (ALU) control
   - Simplifies wiring and hierarchy management by allowing graphical component instantiation and signal routing.
   - Makes the design easier to understand, especially for those less familiar with HDL code.
 
-[alu.pdf](https://github.com/user-attachments/files/20085579/alu.pdf)
+![alu-1](https://github.com/user-attachments/assets/1090bdd6-3a71-441c-a94d-486bcdd1afc8)
 
